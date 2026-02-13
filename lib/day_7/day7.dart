@@ -67,6 +67,8 @@ class Day7 extends StatelessWidget {
 
           SizedBox(height: 20),
           Row(children: [
+            Icon (Icons.person, color: Colors.green),
+            SizedBox(width: 10),
             Text("Adham Albalkh ", style:TextStyle(fontSize: 15,)),
             Spacer(),
             Text("Admin Masjid", style:TextStyle(fontSize: 15,)),
@@ -81,27 +83,29 @@ class Day7 extends StatelessWidget {
           ),
         ),
 
-          SizedBox(height: 20),
-          Row(
-            children: [
-              Expanded( 
-                child: Container(
-                  height: 60,
-                  margin: EdgeInsets.symmetric( horizontal: 40),
-                  decoration: BoxDecoration(
-                    color: Colors.green,
+          SizedBox(width: 12),
+          Padding (
+            padding: EdgeInsets.symmetric(horizontal: 20),
+            child: Row(
+              children: [
+                Expanded( 
+                  child: Container(
+                    height: 60,
+                    decoration: BoxDecoration(
+                      color: Colors.green,
                     borderRadius: BorderRadius.circular(  10),
 
                   ),
                   child: Text("Sedekah", style: TextStyle(color: Colors.white, fontSize: 16),),
                   alignment: Alignment.center,
                 ),
+                
 
               ),
+              SizedBox(width: 12),
               Expanded(
                 child: Container(
                   height: 60,
-                  margin: EdgeInsets.symmetric( horizontal: 40),
                   decoration: BoxDecoration(
                     color: Colors.blue,
                     borderRadius: BorderRadius.circular(10),
@@ -110,7 +114,22 @@ class Day7 extends StatelessWidget {
                   alignment: Alignment.center,
                 ),
               ),
-          ],),
+              SizedBox(width: 12),
+
+              Expanded(
+                child: Container(
+                  height: 60,
+                  decoration: BoxDecoration(
+                    color: Colors.orange,
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  child: Text("zakat", style: TextStyle(color: Colors.white, fontSize: 16),),
+                  alignment: Alignment.center,
+                )
+              ),
+          ],
+            ),
+          ),
 
       
           SizedBox(height: 20),
@@ -120,6 +139,7 @@ class Day7 extends StatelessWidget {
                 child:
                 Container(
                   height: 160,
+                  margin: EdgeInsets.symmetric( horizontal: 20),
                   decoration: BoxDecoration(
                     color: Colors.greenAccent,
                     borderRadius: BorderRadius.circular(10),
