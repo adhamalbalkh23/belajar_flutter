@@ -18,10 +18,10 @@ class Tugas1flutter extends StatelessWidget {
       body: Column(children: [
         Text("Nama : Adham Albalkh"
         , style: TextStyle(
-          fontSize: 20,
+          fontSize: 25,
           fontWeight: FontWeight.bold,
         ),),
-        Row(children: [
+        Column (children: [
           Icon(Icons.location_on),
           Text("Central Jakarta", style: TextStyle(fontSize: 18),)
         ],
