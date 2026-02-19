@@ -16,6 +16,7 @@ class Tugas4 extends StatelessWidget {
         children: [
           Text(
             "Form Donatur",
+            textAlign: TextAlign.center,
             style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
           ),
 
@@ -83,18 +84,33 @@ class Tugas4 extends StatelessWidget {
           // Riwayat Donatur
           Text(
             "Riwayat Donatur",
+            textAlign: TextAlign.center,
             style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
           ),
 
           SizedBox(height: 20),
-
-          ListTile(
-            leading: CircleAvatar(
-              backgroundColor: Colors.green,
-              child: Icon(Icons.volunteer_activism, color: Colors.white),
+            Container(
+            margin: EdgeInsets.only(bottom: 25),
+            padding: EdgeInsets.symmetric(vertical: 8),
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(12),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black12,
+                  blurRadius: 5,
+                  offset: Offset(0, 3),
+                ),
+              ],
             ),
-            title: Text("Wildan"),
-            subtitle: Text("Rp. 500.00 - Santunan Anak Yatim"),
+            child: ListTile(
+              leading: CircleAvatar(
+                backgroundColor: Colors.green,
+                child: Icon(Icons.volunteer_activism, color: Colors.white),
+              ),
+              title: Text("Wildan"),
+              subtitle: Text("Rp. 500.00 - Santunan Anak Yatim"),
+            ),
           ),
 
           SizedBox(height: 20),

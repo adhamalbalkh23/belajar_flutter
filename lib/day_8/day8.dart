@@ -32,7 +32,7 @@ class Day8 extends StatelessWidget {
         child: Column(
           children: [
             Container(
-              margin: EdgeInsets.fromLTRB(20, 20, 20, 10),
+              margin: EdgeInsets.all(18),
               padding: EdgeInsets.all(20),
               decoration: BoxDecoration(
                 color: Colors.white,
@@ -52,7 +52,6 @@ class Day8 extends StatelessWidget {
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                   ),
                   SizedBox(height: 20),
-
                   TextField(
                     decoration: InputDecoration(
                       labelText: "Nama Lengkap",
@@ -132,6 +131,12 @@ class Day8 extends StatelessWidget {
                     children: [
                       Stack(
                         children: [
+                          Container(
+                          decoration: BoxDecoration(
+                             color: Colors.white,
+                             borderRadius: BorderRadius.circular(12),
+                            ),
+                            ),
                           ClipRRect(
                             borderRadius: BorderRadiusGeometry.circular(12),
                             child: Image.asset(
@@ -141,13 +146,6 @@ class Day8 extends StatelessWidget {
                               height: double.infinity,
                             ),
                           ),
-                          Container(
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(12),
-                              color: Colors.white.withOpacity(0.4),
-                            ),
-                          ),
-
                           Positioned(
                             bottom: 10,
                             left: 10,
@@ -164,6 +162,12 @@ class Day8 extends StatelessWidget {
                       // Kegiatan 2
                       Stack(
                         children: [
+                          Container(
+                          decoration: BoxDecoration(
+                          color: const Color.fromARGB(255, 199, 45, 45),
+                           borderRadius: BorderRadius.circular(12),
+                          ),
+                          ),
                           ClipRRect(
                             borderRadius: BorderRadiusGeometry.circular(12),
                             child: Image.asset(
@@ -173,13 +177,6 @@ class Day8 extends StatelessWidget {
                               height: double.infinity,
                             ),
                           ),
-                          Container(
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(12),
-                              color: Colors.white.withOpacity(0.4),
-                            ),
-                          ),
-
                           Positioned(
                             bottom: 10,
                             left: 10,
@@ -196,6 +193,12 @@ class Day8 extends StatelessWidget {
                       // Kegiatan 3
                       Stack(
                         children: [
+                          Container(
+                          decoration: BoxDecoration(
+                          color: const Color.fromARGB(255, 26, 157, 180),
+                           borderRadius: BorderRadius.circular(12),
+                           ),
+                          ),
                           ClipRRect(
                             borderRadius: BorderRadiusGeometry.circular(12),
                             child: Image.asset(
@@ -205,13 +208,7 @@ class Day8 extends StatelessWidget {
                               height: double.infinity,
                             ),
                           ),
-                          Container(
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(12),
-                              color: Colors.white.withOpacity(0.4),
-                            ),
-                          ),
-
+                      
                           Positioned(
                             bottom: 10,
                             left: 10,
@@ -228,6 +225,12 @@ class Day8 extends StatelessWidget {
                       // Kegiatan 4
                       Stack(
                         children: [
+                          Container(
+                            decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(12),
+                            ),
+                            ),
                           ClipRRect(
                             borderRadius: BorderRadiusGeometry.circular(12),
                             child: Image.asset(
@@ -237,13 +240,7 @@ class Day8 extends StatelessWidget {
                               height: double.infinity,
                             ),
                           ),
-                          Container(
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(12),
-                              color: Colors.white.withOpacity(0.4),
-                            ),
-                          ),
-
+                        
                           Positioned(
                             bottom: 10,
                             left: 10,
@@ -260,6 +257,12 @@ class Day8 extends StatelessWidget {
                       // Kegiatan 5
                       Stack(
                         children: [
+                        Container(
+                        decoration: BoxDecoration(
+                          color: const Color.fromARGB(255, 54, 204, 9),
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                      ),
                           ClipRRect(
                             borderRadius: BorderRadiusGeometry.circular(12),
                             child: Image.asset(
@@ -269,13 +272,7 @@ class Day8 extends StatelessWidget {
                               height: double.infinity,
                             ),
                           ),
-                          Container(
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(12),
-                              color: Colors.white.withOpacity(0.4),
-                            ),
-                          ),
-
+                        
                           Positioned(
                             bottom: 10,
                             left: 10,
