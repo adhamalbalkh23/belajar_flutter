@@ -181,7 +181,7 @@ class _Tugas5State extends State<Tugas5 > {
                     ElevatedButton(
                       onPressed: () {
                         setState(() {
-                          if (counter >= 50000) {
+                          if (counter >= 50000) { 
                             counter -= 50000;
                           }
                         });
@@ -216,7 +216,7 @@ class _Tugas5State extends State<Tugas5 > {
          
          
     
-        ]
+        ],
     
 
 
