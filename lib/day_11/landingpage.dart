@@ -12,20 +12,21 @@ class Landingpage extends StatelessWidget {
       body: Stack(
         children: [
           SizedBox(
-          width: double.infinity,
-          height: double.infinity,
-          child: Image.asset("assets/images/landing page.png",
-          fit: BoxFit.cover),
+            width: double.infinity,
+            height: double.infinity,
+            child: Image.asset(
+              "assets/images/landing_page.png",
+              fit: BoxFit.cover,
+            ),
           ),
 
-           Padding(
+          Padding(
             padding: const EdgeInsets.symmetric(horizontal: 34, vertical: 112),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-
                 // Judul
-                const Text(
+                Text(
                   "Mudah Beramal. \nAman. Transparan",
                   style: TextStyle(
                     fontSize: 32,
@@ -44,24 +45,23 @@ class Landingpage extends StatelessWidget {
                     color: Colors.black87,
                   ),
                 ),
-                 const SizedBox(height: 40),
 
-                
+                SizedBox(height: 40),
+
                 Center(
                   child: Column(
                     children: [
                       Image.asset(
-                        "assets/images/logo masjid.png",
+                        "assets/images/logo_masjid.png",
                         height: 316,
                         width: 816,
                       ),
                     ],
                   ),
                 ),
-                
-                const Spacer(),
 
-                
+                Spacer(),
+
                 Container(
                   padding: const EdgeInsets.all(20),
                   decoration: BoxDecoration(
@@ -69,16 +69,15 @@ class Landingpage extends StatelessWidget {
                     borderRadius: BorderRadius.circular(12),
                     boxShadow: [
                       BoxShadow(
-                      color: Colors.black12,
-                      blurRadius: 10,
-                      offset: Offset(0, 10),
-                  ),
-                ],
+                        color: Colors.black12,
+                        blurRadius: 10,
+                        offset: Offset(0, 10),
+                      ),
+                    ],
                     border: Border.all(color: Colors.black26),
-                ),
-                    child: Column(
-                      children: [
-
+                  ),
+                  child: Column(
+                    children: [
                       const Text(
                         "Mulai Kebaikan hari ini",
                         style: TextStyle(
@@ -89,7 +88,6 @@ class Landingpage extends StatelessWidget {
 
                       const SizedBox(height: 14),
 
-                      
                       SizedBox(
                         width: double.infinity,
                         child: ElevatedButton(
@@ -104,16 +102,16 @@ class Landingpage extends StatelessWidget {
                           ),
                           child: Text(
                             "Daftar Sekarang",
-                            style: TextStyle(color: Colors.black,
-                            fontWeight: FontWeight.bold),
-                            
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
                         ),
                       ),
 
                       SizedBox(height: 12),
 
-                      
                       SizedBox(
                         width: double.infinity,
                         child: ElevatedButton(
@@ -126,8 +124,10 @@ class Landingpage extends StatelessWidget {
                           ),
                           child: Text(
                             "Masuk",
-                            style: TextStyle(color: Colors.black,
-                            fontWeight: FontWeight.bold),
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
                         ),
                       ),
@@ -135,12 +135,10 @@ class Landingpage extends StatelessWidget {
                   ),
                 ),
               ],
-              
-              )   
             ),
-        ]
+          ),
+        ],
       ),
     );
-      
   }
 }
