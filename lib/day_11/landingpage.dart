@@ -78,7 +78,7 @@ class Landingpage extends StatelessWidget {
                   ),
                   child: Column(
                     children: [
-                      const Text(
+                      Text(
                         "Mulai Kebaikan hari ini",
                         style: TextStyle(
                           fontSize: 16,
@@ -86,7 +86,7 @@ class Landingpage extends StatelessWidget {
                         ),
                       ),
 
-                      const SizedBox(height: 14),
+                      SizedBox(height: 14),
 
                       SizedBox(
                         width: double.infinity,

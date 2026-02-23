@@ -119,12 +119,12 @@ class Registerpage extends StatelessWidget {
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(15),
                             ),
-                            title: const Icon(
+                            title: Icon(
                               Icons.check_circle,
                               color: Colors.green,
                               size: 50,
                             ),
-                            content: const Text(
+                            content: Text(
                               "Pendaftaran berhasil!",
                               textAlign: TextAlign.center,
                               style: TextStyle(fontWeight: FontWeight.bold),
@@ -135,7 +135,7 @@ class Registerpage extends StatelessWidget {
                                   Navigator.pop(context); // Tutup popup
                                   context.pushReplacement(Loginpage());
                                 },
-                                child: const Text("OK"),
+                                child: Text("OK"),
                               ),
                             ],
                           );
@@ -149,7 +149,7 @@ class Registerpage extends StatelessWidget {
                         borderRadius: BorderRadius.circular(10),
                       ),
                     ),
-                    child: const Text(
+                    child: Text(
                       "Daftar",
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
