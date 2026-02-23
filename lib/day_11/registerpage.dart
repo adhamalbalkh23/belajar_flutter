@@ -20,7 +20,7 @@ class Registerpage extends StatelessWidget {
             ),
           ),
           SingleChildScrollView(
-            padding: const EdgeInsets.symmetric(horizontal: 22, vertical: 62),
+            padding:EdgeInsets.symmetric(horizontal: 22, vertical: 62),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -32,7 +32,7 @@ class Registerpage extends StatelessWidget {
                         height: 316,
                         width: 316,
                       ),
-                      SizedBox(height: 4),
+                      
                       Text(
                         "Pendaftaran Akun",
                         style: TextStyle(
@@ -143,8 +143,8 @@ class Registerpage extends StatelessWidget {
                       );
                     },
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.green,
-                      padding: const EdgeInsets.symmetric(vertical: 15),
+                      backgroundColor: Colors.lightGreen,
+                      padding: EdgeInsets.symmetric(vertical: 15),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10),
                       ),

@@ -47,6 +47,45 @@ class Loginpage extends StatelessWidget {
                     fillColor: Colors.white,
                   ),
                 ),
+
+                SizedBox(height: 16),
+                Text(
+                  "Password",
+                  style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+                ),
+                SizedBox(height: 4),
+                TextField(
+                  decoration: InputDecoration(
+                    hintText: "Masukan passwordmu disini",
+                    border: OutlineInputBorder(),
+                    filled: true,
+                    fillColor: Colors.white,
+                  ),
+                ),
+                
+                SizedBox(height: 24),
+                
+                SizedBox(
+                  width: double.infinity,
+                  child: ElevatedButton(
+                    onPressed: () {},
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.lightGreen,
+                      padding: const EdgeInsets.symmetric(vertical: 15),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                    ),
+                    child:Text(
+                      "Masuk",
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
+                  ),
+                
               ],
             ),
           ),
