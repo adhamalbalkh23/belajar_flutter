@@ -1,5 +1,6 @@
 
 import 'package:belajar_flutter/day_12/drawerpage.dart';
+import 'package:belajar_flutter/day_12/navbarpage.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -32,7 +33,7 @@ class MyApp extends StatelessWidget {
         // tested with just a hot reload.
         colorScheme: .fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: Drawerpage(),
+      home: Navbarpage(),
     );
   }
 }

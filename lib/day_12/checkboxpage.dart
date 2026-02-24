@@ -9,7 +9,7 @@ class Checkboxpage extends StatefulWidget {
 }
 
 class _CheckboxpageState extends State<Checkboxpage> {
-  bool _ischeck = false;
+  bool _ischeck = false;   
 
   @override
   Widget build(BuildContext context) {
