@@ -1,10 +1,5 @@
-import 'package:belajar_flutter/day_10/tugas5.dart';
-import 'package:belajar_flutter/day_11/landingpage.dart';
+
 import 'package:belajar_flutter/day_12/drawerpage.dart';
-import 'package:belajar_flutter/day_7/day7.dart';
-import 'package:belajar_flutter/day_8/day8.dart';
-import 'package:belajar_flutter/day_8/tugas4.dart';
-import 'package:belajar_flutter/tugas_1.dart';
 import 'package:flutter/material.dart';
 
 void main() {

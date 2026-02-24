@@ -1,6 +1,10 @@
 import 'package:belajar_flutter/day_12/checkboxpage.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:belajar_flutter/day_12/dropdownpage.dart';
+import 'package:belajar_flutter/day_12/jampage.dart';
+import 'package:belajar_flutter/day_12/switchpage.dart';
+import 'package:belajar_flutter/day_12/tglpage.dart';
 import 'package:flutter/material.dart';
+
 
 class Drawerpage extends StatefulWidget {
   const Drawerpage({super.key});
@@ -13,7 +17,14 @@ class _DrawerState extends State<Drawerpage> {
   final GlobalKey<ScaffoldState> _scaffoldkey = GlobalKey<ScaffoldState>();
   int _currentIndex = 0;
 
-  static List<Widget> listwidget = [Checkboxpage()];
+  static List<Widget> listwidget = [
+    Checkboxpage(),
+    Switchpage(),
+    Dropdownpage(),
+    Tglpage(),
+    Jampage(),
+    ];
+  
 
   void ontapItemDrawer(int index) {
     setState(() {
@@ -28,7 +39,7 @@ class _DrawerState extends State<Drawerpage> {
       key: _scaffoldkey,
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        title: const Text("Tugas 7 Flutter"),
+        title: Text("Tugas 7 Flutter"),
         leading: InkWell(
           onTap: () => _scaffoldkey.currentState?.openDrawer(),
           child: Icon(Icons.menu),
@@ -77,14 +88,14 @@ class _DrawerState extends State<Drawerpage> {
             ListTile(
               leading: Icon(Icons.person),
               title: Text("Tanggal"),
-              selected: _currentIndex == 2,
-              onTap: () => ontapItemDrawer(2),
+              selected: _currentIndex == 3,
+              onTap: () => ontapItemDrawer(3),
             ),
             ListTile(
               leading: Icon(Icons.person),
               title: Text("Jam"),
-              selected: _currentIndex == 2,
-              onTap: () => ontapItemDrawer(2),
+              selected: _currentIndex == 4,
+              onTap: () => ontapItemDrawer(4),
             ),
           ],
         ),

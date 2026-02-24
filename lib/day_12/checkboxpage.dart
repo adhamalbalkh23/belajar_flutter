@@ -14,7 +14,7 @@ class _CheckboxpageState extends State<Checkboxpage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Pernyataan")),
+      appBar: AppBar(title: Text("Syarat & Ketentuan")),
       body: Column(
         children: [
           Text("Apakah data yang sudah anda buat sudah benar?"),
