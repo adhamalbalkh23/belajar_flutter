@@ -1,10 +1,8 @@
 import 'dart:ui';
 
-import 'package:belajar_flutter/day_12/checkboxpage.dart';
-import 'package:belajar_flutter/day_12/dropdownpage.dart';
-import 'package:belajar_flutter/day_12/jampage.dart';
-import 'package:belajar_flutter/day_12/switchpage.dart';
-import 'package:belajar_flutter/day_12/tglpage.dart';
+import 'package:belajar_flutter/day_12/drawerpage.dart';
+import 'package:belajar_flutter/day_12/ttgaplikasi.dart';
+import 'package:belajar_flutter/day_7/day7.dart';
 import 'package:flutter/material.dart';
 import 'package:crystal_navigation_bar/crystal_navigation_bar.dart';
 
@@ -19,11 +17,10 @@ class _NavbarpageState extends State<Navbarpage> {
   int _currentIndex = 0;
 
   final List<Widget> _pagesList = [
-    Checkboxpage(),
-    Switchpage(),
-    Dropdownpage(),
-    Tglpage(),
-    Jampage(),
+    Drawerpage(),
+    Ttgaplikasi(),
+    Day7(),
+    
   ];
 
   void _handleIndexChanged(int index) {
@@ -39,7 +36,6 @@ class _NavbarpageState extends State<Navbarpage> {
       backgroundColor: const Color.fromARGB(240, 250, 248, 248),
       elevation: 0,),
       extendBody: true,
-      
       body: _pagesList[_currentIndex],
       backgroundColor: Color(0xFF0F172A),
       bottomNavigationBar: Padding(
@@ -57,28 +53,23 @@ class _NavbarpageState extends State<Navbarpage> {
           onTap: _handleIndexChanged,
           items: [
             CrystalNavigationBarItem(
-              icon: Icons.check_box,
+              icon: Icons.settings,
               selectedColor: Colors.pinkAccent,
             ),
             CrystalNavigationBarItem(
-              icon: Icons.toggle_on,
+              icon: Icons.info,
               selectedColor: Colors.pinkAccent,
             ),
             CrystalNavigationBarItem(
-              icon: Icons.arrow_drop_down_circle,
+              icon: Icons.home,
               selectedColor: Colors.pinkAccent,
             ),
-            CrystalNavigationBarItem(
-              icon: Icons.calendar_today,
-              selectedColor: Colors.pinkAccent,
-            ),
-            CrystalNavigationBarItem(
-              icon: Icons.access_time,
-              selectedColor: Colors.pinkAccent,
-            ),
+            
           ],
-        ),),
-        )
+        ),
+        ),
+        
+        ),
         
         ),
       );
