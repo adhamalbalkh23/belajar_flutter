@@ -2,6 +2,7 @@
 import 'package:belajar_flutter/day_14/donaturpage.dart';
 import 'package:belajar_flutter/day_14/listmap_page.dart';
 import 'package:belajar_flutter/day_14/listpage.dart';
+import 'package:belajar_flutter/day_15/registerpage2.dart';
 import 'package:flutter/material.dart';
 
 
@@ -19,7 +20,8 @@ class _DrawerState extends State<Drawerglobalpage > {
   static List<Widget> listwidget = [
     Listpage(),
     ListmapPage(),
-    Donaturpage()
+    Donaturpage(),
+    Registerpage2(),
     
     
     ];
@@ -38,7 +40,7 @@ class _DrawerState extends State<Drawerglobalpage > {
       key: _scaffoldkey,
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        title: Text("Tugas 9 Flutter"),
+        title: Text("Tugas 10 Flutter"),
         leading: InkWell(
           onTap: () => _scaffoldkey.currentState?.openDrawer(),
           child: Icon(Icons.menu),
@@ -83,6 +85,12 @@ class _DrawerState extends State<Drawerglobalpage > {
               title: Text("Daftar Donatur"),
               selected: _currentIndex == 2,
               onTap: () => ontapItemDrawer(2),
+            ),
+            ListTile(
+              leading: Icon(Icons.attach_money),
+              title: Text("Tugas 10"),
+              selected: _currentIndex == 3,
+              onTap: () => ontapItemDrawer(3),
             ),
           ],
         ),

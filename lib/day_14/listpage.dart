@@ -9,6 +9,12 @@ class Listpage extends StatelessWidget {
       "Zakat Penghasilan",
       "infaq",
       "infaq Jum'at",
+      "Donasi Pembangunan Masjid",
+      "Zakat Pertanian",
+      "Zakat Maal",
+      "Zakat Fitrah",
+      "Zakat Perdagangan",
+      "Santunan Anak Yatim",
     ];
 
 
