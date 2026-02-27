@@ -17,6 +17,7 @@ class _RegisterpageState extends State<Registerpage2> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _phoneController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -56,7 +57,7 @@ class _RegisterpageState extends State<Registerpage2> {
                     ),
                   ),
                   SizedBox(height: 20),
-
+                  // Nama Lengkap
                  Text("Nama Lengkap",
                       style: TextStyle(fontWeight: FontWeight.bold)),
                   SizedBox(height: 6),

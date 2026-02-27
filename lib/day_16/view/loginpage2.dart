@@ -1,11 +1,20 @@
 import 'package:belajar_flutter/day_14/drawerglobalpage.dart';
 import 'package:belajar_flutter/day_16/database/preference.dart';
+import 'package:belajar_flutter/day_16/database/sqflite.dart';
+import 'package:belajar_flutter/day_16/models/user_model.dart';
 import 'package:belajar_flutter/extension/navigator.dart';
 import 'package:flutter/material.dart';
 
-class Loginpage2 extends StatelessWidget {
+class Loginpage2 extends StatefulWidget {
   const Loginpage2 ({super.key});
 
+  @override
+  State<Loginpage2> createState() => _Loginpage2State();
+}
+
+class _Loginpage2State extends State<Loginpage2> {
+  final TextEditingController emailContoler = TextEditingController();
+  final TextEditingController passwordControler =TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -41,7 +50,7 @@ class Loginpage2 extends StatelessWidget {
                   style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
                 ),
                 SizedBox(height: 4),
-                TextField(
+                TextFormField(
                   decoration: InputDecoration(
                     hintText: "Masukan emailmu disini",
                     border: OutlineInputBorder(),
@@ -56,7 +65,7 @@ class Loginpage2 extends StatelessWidget {
                   style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
                 ),
                 SizedBox(height: 4),
-                TextField(
+                TextFormField(
                   decoration: InputDecoration(
                     hintText: "Masukan passwordmu disini",
                     border: OutlineInputBorder(),
@@ -70,9 +79,22 @@ class Loginpage2 extends StatelessWidget {
                 SizedBox(
                   width: double.infinity,
                   child: ElevatedButton(
-                    onPressed: () {
+                    onPressed: () async {
+                      final UserModel? login = await DbHelper.loginUser(
+                        email: emailContoler.text, 
+                        password: passwordControler.text
+                        );
+                      if (login != null) {
                         PreferenceHandler().storingIsLogin(true);
-                        context.push(Drawerglobalpage());
+                         ScaffoldMessenger.of (
+                          context,).showSnackBar(
+                          SnackBar(content: Text("Login Berhasil")));
+                          context.push(Drawerglobalpage());
+                        } else {
+                          ScaffoldMessenger.of (
+                          context,).showSnackBar(
+                          SnackBar(content: Text("Login Gagal")));
+                      }
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.lightGreen,
@@ -90,8 +112,38 @@ class Loginpage2 extends StatelessWidget {
                     ),
                   ),
                   ),
+                  SizedBox(height: 24),
+                  
+                  SizedBox(
+                  width: double.infinity,
+                  child: ElevatedButton(
+                    onPressed: () {
+                        DbHelper.registerUser(
+                          UserModel(
+                            email: emailContoler.text,
+                            password: passwordControler.text,
+                          ),
+                        );
+                    },
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.lightGreen,
+                      padding: EdgeInsets.symmetric(vertical: 15),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                    ),
+                    child:Text(
+                      "Daftar",
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
+                  ),
                 
               ],
+              
             ),
           ),
         ],
