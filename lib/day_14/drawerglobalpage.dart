@@ -3,6 +3,9 @@ import 'package:belajar_flutter/day_14/donaturpage.dart';
 import 'package:belajar_flutter/day_14/listmap_page.dart';
 import 'package:belajar_flutter/day_14/listpage.dart';
 import 'package:belajar_flutter/day_15/registerpage2.dart';
+import 'package:belajar_flutter/day_16/database/preference.dart';
+import 'package:belajar_flutter/day_16/view/loginpage2.dart';
+import 'package:belajar_flutter/extension/navigator.dart';
 import 'package:flutter/material.dart';
 
 
@@ -91,6 +94,15 @@ class _DrawerState extends State<Drawerglobalpage > {
               title: Text("Tugas 10"),
               selected: _currentIndex == 3,
               onTap: () => ontapItemDrawer(3),
+            ),
+            ListTile(
+              leading: Icon(Icons.logout),
+              title: Text("Logout"),
+              selected: _currentIndex == 4,
+              onTap: () {
+                PreferenceHandler().deleteIsLogin();
+                context.pushAndRemoveAll(Loginpage2());
+              }
             ),
           ],
         ),
