@@ -6,7 +6,7 @@ import 'package:belajar_flutter/extension/navigator.dart';
 import 'package:flutter/material.dart';
 
 class Loginpage2 extends StatefulWidget {
-  const Loginpage2 ({super.key});
+  const Loginpage2({super.key});
 
   @override
   State<Loginpage2> createState() => _Loginpage2State();
@@ -14,7 +14,7 @@ class Loginpage2 extends StatefulWidget {
 
 class _Loginpage2State extends State<Loginpage2> {
   final TextEditingController emailContoler = TextEditingController();
-  final TextEditingController passwordControler =TextEditingController();
+  final TextEditingController passwordControler = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -51,6 +51,7 @@ class _Loginpage2State extends State<Loginpage2> {
                 ),
                 SizedBox(height: 4),
                 TextFormField(
+                  controller: emailContoler,
                   decoration: InputDecoration(
                     hintText: "Masukan emailmu disini",
                     border: OutlineInputBorder(),
@@ -66,6 +67,7 @@ class _Loginpage2State extends State<Loginpage2> {
                 ),
                 SizedBox(height: 4),
                 TextFormField(
+                  controller: passwordControler,
                   decoration: InputDecoration(
                     hintText: "Masukan passwordmu disini",
                     border: OutlineInputBorder(),
@@ -73,27 +75,28 @@ class _Loginpage2State extends State<Loginpage2> {
                     fillColor: Colors.white,
                   ),
                 ),
-                
+
                 SizedBox(height: 24),
-                
+
                 SizedBox(
                   width: double.infinity,
                   child: ElevatedButton(
                     onPressed: () async {
                       final UserModel? login = await DbHelper.loginUser(
-                        email: emailContoler.text, 
-                        password: passwordControler.text
-                        );
+                        email: emailContoler.text,
+                        password: passwordControler.text,
+                      );
+
                       if (login != null) {
                         PreferenceHandler().storingIsLogin(true);
-                         ScaffoldMessenger.of (
-                          context,).showSnackBar(
-                          SnackBar(content: Text("Login Berhasil")));
-                          context.push(Drawerglobalpage());
-                        } else {
-                          ScaffoldMessenger.of (
-                          context,).showSnackBar(
-                          SnackBar(content: Text("Login Gagal")));
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(content: Text("Login Berhasil")),
+                        );
+                        context.push(Drawerglobalpage());
+                      } else {
+                        ScaffoldMessenger.of(
+                          context,
+                        ).showSnackBar(SnackBar(content: Text("Login Gagal")));
                       }
                     },
                     style: ElevatedButton.styleFrom(
@@ -103,7 +106,7 @@ class _Loginpage2State extends State<Loginpage2> {
                         borderRadius: BorderRadius.circular(10),
                       ),
                     ),
-                    child:Text(
+                    child: Text(
                       "Masuk",
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
@@ -111,19 +114,23 @@ class _Loginpage2State extends State<Loginpage2> {
                       ),
                     ),
                   ),
-                  ),
-                  SizedBox(height: 24),
-                  
-                  SizedBox(
+                ),
+                SizedBox(height: 24),
+
+                SizedBox(
                   width: double.infinity,
                   child: ElevatedButton(
-                    onPressed: () {
-                        DbHelper.registerUser(
-                          UserModel(
-                            email: emailContoler.text,
-                            password: passwordControler.text,
-                          ),
-                        );
+                    onPressed: () async {
+                      await DbHelper.registerUser(
+                        UserModel(
+                          email: emailContoler.text,
+                          password: passwordControler.text,
+                        ),
+                      );
+
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(content: Text("Pendaftaran Berhasil")),
+                      );
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.lightGreen,
@@ -132,7 +139,7 @@ class _Loginpage2State extends State<Loginpage2> {
                         borderRadius: BorderRadius.circular(10),
                       ),
                     ),
-                    child:Text(
+                    child: Text(
                       "Daftar",
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
@@ -140,10 +147,10 @@ class _Loginpage2State extends State<Loginpage2> {
                       ),
                     ),
                   ),
-                  ),
-                
+                ),
+                SizedBox(height: 16),
+                SizedBox(height: 56),
               ],
-              
             ),
           ),
         ],
