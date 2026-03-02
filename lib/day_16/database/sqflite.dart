@@ -8,12 +8,22 @@ class DbHelper {
     final dbPath = await getDatabasesPath();
     return openDatabase(
       join(dbPath, 'my_nurulafalah.db'),
-      onCreate: (db, version) {
-        return db.execute(
+      onCreate: (db, version) async {
+        await db.execute(
           'CREATE TABLE user (id INTEGER PRIMARY KEY AUTOINCREMENT, email Text, password TEXT)',
         );
+        await db.execute(
+          'CREATE TABLE donatur (id INTEGER PRIMARY KEY AUTOINCREMENT, nama Text, pesandonasi TEXT, jumlah TEXT)',
+        );
       },
-      version: 1,
+      version: 3,
+      onUpgrade: (db, oldVersion, newVersion) async {
+        if (oldVersion < 3) {
+          await db.execute(
+            'CREATE TABLE donatur (id INTEGER PRIMARY KEY AUTOINCREMENT, nama Text, pesandonasi TEXT, jumlah TEXT)',
+          );
+        }
+      },
     );
   }
 

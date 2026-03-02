@@ -1,22 +1,21 @@
-
-import 'package:belajar_flutter/day_14/donaturpage.dart';
+import 'package:belajar_flutter/day_14/donaturpage2.dart';
 import 'package:belajar_flutter/day_14/listmap_page.dart';
 import 'package:belajar_flutter/day_14/listpage.dart';
 import 'package:belajar_flutter/day_15/registerpage2.dart';
 import 'package:belajar_flutter/day_16/database/preference.dart';
+import 'package:belajar_flutter/day_16/view/donaturscreen.dart';
 import 'package:belajar_flutter/day_16/view/loginpage2.dart';
 import 'package:belajar_flutter/extension/navigator.dart';
 import 'package:flutter/material.dart';
 
-
-class Drawerglobalpage  extends StatefulWidget {
-  const Drawerglobalpage ({super.key});
+class Drawerglobalpage extends StatefulWidget {
+  const Drawerglobalpage({super.key});
 
   @override
-  State<Drawerglobalpage > createState() => _DrawerState();
+  State<Drawerglobalpage> createState() => _DrawerState();
 }
 
-class _DrawerState extends State<Drawerglobalpage > {
+class _DrawerState extends State<Drawerglobalpage> {
   final GlobalKey<ScaffoldState> _scaffoldkey = GlobalKey<ScaffoldState>();
   int _currentIndex = 0;
 
@@ -25,10 +24,8 @@ class _DrawerState extends State<Drawerglobalpage > {
     ListmapPage(),
     Donaturpage(),
     Registerpage2(),
-    
-    
-    ];
-  
+    Donaturscreen(),
+  ];
 
   void ontapItemDrawer(int index) {
     setState(() {
@@ -43,7 +40,7 @@ class _DrawerState extends State<Drawerglobalpage > {
       key: _scaffoldkey,
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        title: Text("Tugas 10 Flutter"),
+        title: Text("Tugas 11 Flutter"),
         leading: InkWell(
           onTap: () => _scaffoldkey.currentState?.openDrawer(),
           child: Icon(Icons.menu),
@@ -96,13 +93,19 @@ class _DrawerState extends State<Drawerglobalpage > {
               onTap: () => ontapItemDrawer(3),
             ),
             ListTile(
+              leading: Icon(Icons.percent),
+              title: Text("Donatur"),
+              selected: _currentIndex == 4,
+              onTap: () => ontapItemDrawer(4),
+            ),
+            ListTile(
               leading: Icon(Icons.logout),
               title: Text("Logout"),
-              selected: _currentIndex == 4,
+              selected: _currentIndex == 5,
               onTap: () {
                 PreferenceHandler().deleteIsLogin();
                 context.pushAndRemoveAll(Loginpage2());
-              }
+              },
             ),
           ],
         ),
