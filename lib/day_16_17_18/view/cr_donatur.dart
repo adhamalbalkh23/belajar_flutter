@@ -1,16 +1,18 @@
-import 'package:belajar_flutter/day_16/database/donatur_controller.dart';
-import 'package:belajar_flutter/day_16/models/donatur_model.dart';
+import 'package:belajar_flutter/day_16_17_18/database/donatur_controller.dart';
+import 'package:belajar_flutter/day_16_17_18/models/donatur_model.dart';
+import 'package:belajar_flutter/day_16_17_18/view/donaturscreen.dart';
+import 'package:belajar_flutter/extension/navigator.dart';
 import 'package:belajar_flutter/utils/decoration_from.dart';
 import 'package:flutter/material.dart';
 
-class Donaturscreen extends StatefulWidget {
-  const Donaturscreen({super.key});
+class CrDonatur extends StatefulWidget {
+  const CrDonatur({super.key});
 
   @override
-  State<Donaturscreen> createState() => _DonaturpageState();
+  State<CrDonatur> createState() => _DonaturpageState();
 }
 
-class _DonaturpageState extends State<Donaturscreen> {
+class _DonaturpageState extends State<CrDonatur> {
   final TextEditingController nameControler = TextEditingController();
   final TextEditingController pesanControler = TextEditingController();
   final TextEditingController jumlahControler = TextEditingController();
@@ -79,6 +81,17 @@ class _DonaturpageState extends State<Donaturscreen> {
                     setState(() {});
                   },
                   child: Text("Kirim Donasi"),
+                ),
+              ),
+              SizedBox(height: 24),
+
+              SizedBox(
+                width: double.infinity,
+                child: ElevatedButton(
+                  onPressed: () {
+                    context.push(Donaturscreen());
+                  },
+                  child: Text("Lihat Data Donatur"),
                 ),
               ),
               donaturWidget(),

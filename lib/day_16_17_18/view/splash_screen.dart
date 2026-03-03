@@ -1,6 +1,6 @@
 import 'package:belajar_flutter/day_14/drawerglobalpage.dart';
-import 'package:belajar_flutter/day_16/database/preference.dart';
-import 'package:belajar_flutter/day_16/view/loginpage2.dart';
+import 'package:belajar_flutter/day_16_17_18/database/preference.dart';
+import 'package:belajar_flutter/day_16_17_18/view/loginpage2.dart';
 import 'package:belajar_flutter/extension/navigator.dart';
 import 'package:flutter/material.dart';
 
@@ -29,6 +29,7 @@ class _SplashScreenState extends State<SplashScreen> {
       context.pushAndRemoveAll(Loginpage2());
     }
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

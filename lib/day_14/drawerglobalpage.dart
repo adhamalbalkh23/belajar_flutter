@@ -2,9 +2,9 @@ import 'package:belajar_flutter/day_14/donaturpage2.dart';
 import 'package:belajar_flutter/day_14/listmap_page.dart';
 import 'package:belajar_flutter/day_14/listpage.dart';
 import 'package:belajar_flutter/day_15/registerpage2.dart';
-import 'package:belajar_flutter/day_16/database/preference.dart';
-import 'package:belajar_flutter/day_16/view/donaturscreen.dart';
-import 'package:belajar_flutter/day_16/view/loginpage2.dart';
+import 'package:belajar_flutter/day_16_17_18/database/preference.dart';
+import 'package:belajar_flutter/day_16_17_18/view/cr_donatur.dart';
+import 'package:belajar_flutter/day_16_17_18/view/loginpage2.dart';
 import 'package:belajar_flutter/extension/navigator.dart';
 import 'package:flutter/material.dart';
 
@@ -24,7 +24,7 @@ class _DrawerState extends State<Drawerglobalpage> {
     ListmapPage(),
     Donaturpage(),
     Registerpage2(),
-    Donaturscreen(),
+    CrDonatur(),
   ];
 
   void ontapItemDrawer(int index) {

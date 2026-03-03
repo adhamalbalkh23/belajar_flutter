@@ -1,7 +1,7 @@
 import 'package:belajar_flutter/day_14/drawerglobalpage.dart';
-import 'package:belajar_flutter/day_16/database/preference.dart';
-import 'package:belajar_flutter/day_16/database/sqflite.dart';
-import 'package:belajar_flutter/day_16/models/user_model.dart';
+import 'package:belajar_flutter/day_16_17_18/database/preference.dart';
+import 'package:belajar_flutter/day_16_17_18/database/sqflite.dart';
+import 'package:belajar_flutter/day_16_17_18/models/user_model.dart';
 import 'package:belajar_flutter/extension/navigator.dart';
 import 'package:flutter/material.dart';
 
