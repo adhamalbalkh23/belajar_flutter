@@ -12,11 +12,17 @@ class PreferenceHandler {
 
   //Key user
   static const String _isLogin = 'isLogin';
+  static const String _token = 'token';
 
   //CREATE
   Future<void> storingIsLogin(bool isLogin) async {
     // final prefs = await SharedPreferences.getInstance();
     _preferences.setBool(_isLogin, isLogin);
+  }
+
+  Future<void> storingToken(String token) async {
+    // final prefs = await SharedPreferences.getInstance();
+    _preferences.setString(_token, token);
   }
 
   //GET
@@ -25,6 +31,18 @@ class PreferenceHandler {
 
     var data = prefs.getBool(_isLogin);
     return data;
+  }
+
+  static Future<String?> getToken() async {
+    final prefs = await SharedPreferences.getInstance();
+
+    var data = prefs.getString(_token);
+    return data;
+  }
+
+  Future<void> saveToken(String token) async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setString(_token, token);
   }
 
   //DELETE
