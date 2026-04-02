@@ -1,4 +1,5 @@
 import 'package:belajar_flutter/day_15/homepage.dart';
+import 'package:belajar_flutter/day_30/view/logingibli.dart';
 import 'package:belajar_flutter/extension/navigator.dart';
 import 'package:flutter/material.dart';
 
@@ -104,23 +105,6 @@ class _RegisterpageState extends State<Registergbibli> {
 
                   SizedBox(height: 14),
 
-                  Text(
-                    "Nomor HP",
-                    style: TextStyle(fontWeight: FontWeight.bold),
-                  ),
-                  SizedBox(height: 6),
-                  TextFormField(
-                    controller: _phoneController,
-                    decoration: const InputDecoration(
-                      hintText: "Masukkan nomor hpmu disini",
-                      border: OutlineInputBorder(),
-                      filled: true,
-                      fillColor: Colors.white,
-                    ),
-                  ),
-
-                  SizedBox(height: 14),
-
                   // Password
                   Text(
                     "Password",
@@ -143,6 +127,8 @@ class _RegisterpageState extends State<Registergbibli> {
                       return null;
                     },
                   ),
+
+                  SizedBox(height: 8),
 
                   SizedBox(
                     width: double.infinity,
@@ -170,9 +156,7 @@ class _RegisterpageState extends State<Registergbibli> {
                                 TextButton(
                                   onPressed: () {
                                     Navigator.pop(context); // Tutup popup
-                                    context.push(
-                                      Homepage(nama: _nameController.text),
-                                    );
+                                    context.push(Logingibli());
                                   },
                                   child: Text("OK"),
                                 ),

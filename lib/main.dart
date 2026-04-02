@@ -1,5 +1,5 @@
 import 'package:belajar_flutter/day_14/drawerglobalpage.dart';
-import 'package:belajar_flutter/day_16_17_18/view/splash_screen.dart';
+
 import 'package:belajar_flutter/day_29/view/homeghibli.dart';
 import 'package:belajar_flutter/day_29/view/splashghibli.dart';
 import 'package:belajar_flutter/day_30/view/logingibli.dart';

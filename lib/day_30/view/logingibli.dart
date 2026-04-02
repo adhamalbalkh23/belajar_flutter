@@ -1,7 +1,7 @@
-import 'package:belajar_flutter/day_14/drawerglobalpage.dart';
 import 'package:belajar_flutter/day_16_17_18/database/preference.dart';
 import 'package:belajar_flutter/day_30/api/login.dart';
 import 'package:belajar_flutter/day_30/view/registergbibli.dart';
+import 'package:belajar_flutter/day_30/view/profileghibli.dart';
 import 'package:flutter/material.dart';
 
 class Logingibli extends StatefulWidget {
@@ -27,13 +27,13 @@ class _Loginpage2State extends State<Logingibli> {
       );
 
       if (result != null) {
-        // simpan status login
         await PreferenceHandler().storingIsLogin(true);
 
-        // simpan token (optional)
         if (result.data?.token != null) {
           await PreferenceHandler().saveToken(result.data!.token!);
         }
+
+        if (!mounted) return;
 
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(content: Text(result.message ?? "Login berhasil")),
@@ -41,7 +41,7 @@ class _Loginpage2State extends State<Logingibli> {
 
         Navigator.pushReplacement(
           context,
-          MaterialPageRoute(builder: (context) => Drawerglobalpage()),
+          MaterialPageRoute(builder: (context) => Profileghibli()),
         );
       }
     } catch (e) {
@@ -90,7 +90,7 @@ class _Loginpage2State extends State<Logingibli> {
                 const SizedBox(height: 4),
                 TextFormField(
                   controller: emailContoler,
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                     hintText: "Masukan email",
                     filled: true,
                     fillColor: Colors.white,
@@ -108,7 +108,7 @@ class _Loginpage2State extends State<Logingibli> {
                 TextFormField(
                   controller: passwordControler,
                   obscureText: true,
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                     hintText: "Masukan password",
                     filled: true,
                     fillColor: Colors.white,
@@ -137,6 +137,8 @@ class _Loginpage2State extends State<Logingibli> {
                 ),
 
                 const SizedBox(height: 16),
+
+                // REGISTER BUTTON
                 SizedBox(
                   width: double.infinity,
                   child: ElevatedButton(
@@ -146,7 +148,7 @@ class _Loginpage2State extends State<Logingibli> {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => Registergbibli(),
+                                builder: (context) => const Registergbibli(),
                               ),
                             );
                           },
@@ -154,12 +156,10 @@ class _Loginpage2State extends State<Logingibli> {
                       backgroundColor: Colors.red,
                       padding: const EdgeInsets.symmetric(vertical: 15),
                     ),
-                    child: isLoading
-                        ? const CircularProgressIndicator(color: Colors.white)
-                        : const Text(
-                            "Daftar",
-                            style: TextStyle(color: Colors.white),
-                          ),
+                    child: const Text(
+                      "Daftar",
+                      style: TextStyle(color: Colors.white),
+                    ),
                   ),
                 ),
               ],

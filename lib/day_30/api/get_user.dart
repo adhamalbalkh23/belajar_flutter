@@ -6,24 +6,22 @@ import 'package:belajar_flutter/day_30/api/endpoint.dart';
 import 'package:belajar_flutter/day_30/models/get_model.dart';
 import 'package:http/http.dart' as http;
 
-// class Repository {
-
-// }
 Future<GetUserModel?> getUser() async {
-  var token = await PreferenceHandler.getToken();
-  final response = await http.get(
-    Uri.parse(Endpoint.register),
+  final token = await PreferenceHandler().getToken();
 
-    headers: {"Accept": "application/json", "Authentication": token.toString()},
+  log("TOKEN: $token");
+
+  final response = await http.get(
+    Uri.parse(Endpoint.profile),
+    headers: {"Accept": "application/json", "Authorization": "Bearer $token"},
   );
 
-  log(response.body);
+  log("STATUS: ${response.statusCode}");
+  log("BODY: ${response.body}");
+
   if (response.statusCode == 200) {
     return GetUserModel.fromJson(json.decode(response.body));
   } else {
-    final error = GetUserModel.fromJson(json.decode(response.body));
-    log(error.toString());
-
-    throw Exception(error.message);
+    throw Exception("Gagal ambil user: ${response.body}");
   }
 }
